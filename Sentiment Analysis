@@ -1,0 +1,12 @@
+from textblob import TextBlob
+
+news = "The stock market is booming with massive gains!"
+
+sentiment_score = TextBlob(news).sentiment.polarity
+
+if sentiment_score > 0:
+    print("Positive News: Might be a good time to BUY stocks!")
+elif sentiment_score < 0:
+    print("Negative News: Market might go down, consider SELLING.")
+else:
+    print("Neutral News: No strong trend detected.")
