@@ -1,0 +1,13 @@
+from sklearn.linear_model import LinearRegression
+import numpy as np
+
+X = np.array([1, 2, 3, 4, 5]).reshape(-1, 1)  # Days
+y = np.array([100, 102, 105, 108, 112])  # Prices
+
+model = LinearRegression()
+model.fit(X, y)
+
+next_day = np.array([[6]])  # Predict for day 6
+predicted_price = model.predict(next_day)
+
+print(f"Predicted price for day 6: {predicted_price[0]:.2f}")
