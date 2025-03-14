@@ -1,0 +1,12 @@
+import pandas as pd
+import numpy as n
+
+data = {'Price': [100, 102, 101, 105, 107, 110, 108, 112, 115, 117]}
+df = pd.DataFrame(data)
+
+df['Short_MA'] = df['Price'].rolling(window=3).mean()  # Short-term (3-day)
+df['Long_MA'] = df['Price'].rolling(window=5).mean()   # Long-term (5-day)
+
+df['Signal'] = np.where(df['Short_MA'] > df['Long_MA'], 'BUY', 'SELL')
+
+print(df[['Price', 'Short_MA', 'Long_MA', 'Signal']])
