@@ -1,0 +1,8 @@
+stocks = {'AAPL': 150, 'GOOGL': 2800, 'TSLA': 900}  # Stock Prices
+total_budget = 5000  # Investment Budget
+
+allocations = {'AAPL': 0.5, 'GOOGL': 0.3, 'TSLA': 0.2}
+
+portfolio = {stock: (total_budget * alloc) // price for stock, price, alloc in zip(stocks.keys(), stocks.values(), allocations.values())}
+
+print("AI Suggested Portfolio:", portfolio)
