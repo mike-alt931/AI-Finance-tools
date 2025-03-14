@@ -1,0 +1,15 @@
+import numpy as np
+
+# Sample stock prices (fluctuations)
+prices = [100, 105, 95, 110, 90, 120, 85, 130]
+
+# AI calculates market volatility (risk)
+volatility = np.std(prices)  # Standard deviation
+
+# Risk Alert
+if volatility > 15:
+    print("⚠️ HIGH Market Risk! Be cautious.")
+elif volatility > 10:
+    print("⚠️ MEDIUM Market Risk. Consider risk management strategies.")
+else:
+    print("✅ LOW Market Risk. Market is stable.")
